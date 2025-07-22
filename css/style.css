@@ -19,8 +19,14 @@ body {
 
 /* Banner Section (Trinity Image Above Navbar) */
 .banner {
-  padding: 0.5rem 0; /* CHANGE: Reduced padding to minimize space above navbar */
+  padding: 0.2rem 0;
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 0rem 0;
+  }
 }
 
 .banner-image-container {
@@ -35,10 +41,12 @@ body {
   opacity: 0.95;
 }
 
-/* CHANGE: Even larger on mobile */
+/* CHANGE: Make Trinity image larger on mobile */
 @media (max-width: 768px) {
   .banner-image {
-    max-width: 100%;
+    max-width: 100%; /* Already full-width */
+    min-height: 200px; /* CHANGE: Added min-height to make it larger vertically (adjust as needed, e.g., 150px, 250px) */
+    object-fit: cover; /* Ensures the image scales while maintaining aspect ratio */
   }
 }
 
@@ -46,14 +54,14 @@ body {
 header {
   background-color: rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.2rem 1.5rem; /* CHANGE: Reduced padding to minimize space below banner */
+  padding: 0.1rem 1rem;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -106,14 +114,16 @@ header {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 50px;
     left: -100%;
+    right: 0;
+    top: 100%;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.95);
     width: 100%;
     text-align: center;
     transition: left 0.3s ease-in-out;
     padding: 0.5rem 0;
+    z-index: 10;
   }
 
   .nav-links.show {
@@ -122,6 +132,10 @@ header {
 
   .hamburger {
     display: flex;
+  }
+
+  .navbar {
+    padding: 0.3rem 1rem;
   }
 }
 
