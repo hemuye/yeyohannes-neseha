@@ -17,9 +17,27 @@ body {
   justify-content: space-between;
 }
 
+/* Banner Section (Trinity Image Above Navbar) */
+.banner {
+  padding: 2rem 0;
+  background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
+}
+
+.banner-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* Glowing effect matching the image */
+  border: 5px solid #ffd700; /* Fallback gold border for the image itself */
+}
+
 /* Header */
 header {
-  padding: 1rem;
   background-color: rgba(255, 255, 255, 0.2);
   border-bottom: 2px solid #fff3;
 }
@@ -94,30 +112,17 @@ header {
   padding: 3rem 2rem;
   max-width: 800px;
   margin: 2rem auto;
-  border: 10px solid transparent; /* Space for ornate border */
-  border-image: url('images/border-pattern.png') 30 round; /* Use your border slice PNG here */
-  border-image-slice: 30; /* Adjust based on your PNG slice */
+  border: 10px solid #ffd700; /* Fallback solid gold border */
+  border-image: url('images/border-pattern.png') 30 round; /* Activates ornate pattern when PNG is added */
+  border-image-slice: 30; /* Adjust based on your PNG */
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Subtle glow effect */
-}
-
-.hero-image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); /* Glowing effect like the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.3); /* Mimics ornate ridges and glow */
+  color: #fff;
 }
 
 .hero-title {
   font-size: 2rem;
-  color: #fff;
   font-weight: bold;
   margin-bottom: 1rem;
 }
