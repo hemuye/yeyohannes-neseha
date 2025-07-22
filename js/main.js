@@ -1,38 +1,62 @@
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const translateIcon = document.getElementById('translate-icon');
+const overlay = document.getElementById('overlay');
+const dropdowns = document.querySelectorAll('.dropdown');
 
-// Hamburger menu toggle (slide from left)
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
+  const isOpen = navLinks.classList.toggle('show');
+  hamburger.classList.toggle('active', isOpen);
+  overlay.classList.toggle('show', isOpen);
+  dropdowns.forEach(dropdown => dropdown.classList.remove('active')); // Close submenus on hamburger toggle
 });
 
-// Google Translate custom icon trigger
+overlay.addEventListener('click', () => {
+  navLinks.classList.remove('show');
+  hamburger.classList.remove('active');
+  overlay.classList.remove('show');
+});
+
+dropdowns.forEach(dropdown => {
+  const link = dropdown.querySelector('a');
+  link.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+
 if (translateIcon) {
   translateIcon.addEventListener('click', () => {
-    // Toggle the visibility of the translate element
     const translateElement = document.getElementById('google_translate_element');
     if (translateElement) {
-      translateElement.style.display = translateElement.style.display === 'block' ? 'none' : 'block';
+      translateElement.classList.toggle('show');
     }
-    // Note: Google Translate widget needs to initialize separately; this just toggles visibility
   });
 }
 
-// Q&A Form Handling (Temporary Console Log)
-const qaForm = document.getElementById('qa-form');
-const qaMessage = document.getElementById('qa-message');
+// Basic search functionality
+const searchButton = document.querySelector('.search-button');
+if (searchButton) {
+  searchButton.addEventListener('click', () => {
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput && searchInput.value.trim()) {
+      alert(`Searching for: ${searchInput.value}`);
+      searchInput.value = ''; // Clear input
+    }
+  });
+}
 
-if (qaForm) {
-  qaForm.addEventListener('submit', (e) => {
+// Baptism Form Handling
+const baptismForm = document.querySelector('.baptism-form');
+if (baptismForm) {
+  baptismForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(qaForm);
+    const formData = new FormData(baptismForm);
     const data = Object.fromEntries(formData);
-    console.log('Form submitted:', data);
-    qaMessage.textContent = 'Thank you! Your question has been received.';
-    qaForm.reset();
-    setTimeout(() => {
-      qaMessage.textContent = '';
-    }, 3000);
+    console.log('Baptism form submitted:', data);
+    alert('Thank you! Your baptism request has been received. We will contact you soon.');
+    baptismForm.reset();
   });
 }
