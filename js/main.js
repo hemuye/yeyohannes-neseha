@@ -7,6 +7,10 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
 
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('show');
+});
+
 // Language toggle state
 let currentLang = localStorage.getItem('language') || 'en';
 
