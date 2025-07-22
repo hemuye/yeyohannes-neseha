@@ -17,16 +17,22 @@
 
   <header>
     <nav class="navbar">
-      <div class="logo" data-i18n="logo">የዮሐንስ ንስሐ</div>
+      <div class="logo">የዮሐንስ ንስሐ</div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="faith.html" data-i18n="nav_faith">Our Faith</a></li>
-        <li><a href="qa.html" data-i18n="nav_qa">Q&A</a></li>
-        <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="faith.html">Our Faith</a></li>
+        <li><a href="qa.html">Q&A</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- OrthoConnect Integration Links -->
+        <li><a href="church-finder.html">Church Finder</a></li>
+        <li><a href="events.html">Events Calendar</a></li>
+        <li><a href="social-hub.html">Social Media Hub</a></li>
       </ul>
+      <!-- Google Translate Widget with Custom Icon -->
       <div class="language-toggle">
-        <button id="toggle-lang">EN | አማ</button>
+        <button id="translate-icon" title="Translate">🌐</button>
+        <div id="google_translate_element" style="display: none;"></div>
       </div>
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -38,39 +44,61 @@
 
   <main>
     <section class="hero">
-      <!-- Welcome Section -->
-      <h3 class="hero-title" data-i18n="home_welcome_title">Welcome to YeYohannes Neseha</h3>
-      <p class="hero-verse" data-i18n="home_welcome_content">A spiritual sanctuary offering guidance, repentance, and connection for the Ethiopian Orthodox Tewahedo Church community worldwide.</p>
+      <h3 class="hero-title">In the Name of the Father, the Son, and the Holy Spirit</h3>
+      <p class="hero-verse">“Ask, and it will be given to you; seek, and you will find.” — Job 32:7</p>
+      <a href="https://linktr.ee/yeyohannesneseha" class="hero-link">https://linktr.ee/yeyohannesneseha</a>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="content-section">
+      <h4 class="section-title">Welcome to YeYohannes Neseha</h4>
+      <p class="section-content">A spiritual sanctuary offering guidance, repentance, and connection for the Ethiopian Orthodox Tewahedo Church community worldwide.</p>
     </section>
 
     <!-- Daily Reflection Section -->
     <section class="content-section">
-      <h4 class="section-title" data-i18n="home_reflection_title">Daily Reflection</h4>
-      <p class="section-content" data-i18n="home_reflection_content">“The Lord is my shepherd; I shall not want.” — Psalm 23:1 (Placeholder: Dynamic content to be added later.)</p>
+      <h4 class="section-title">Daily Reflection</h4>
+      <p class="section-content">“The Lord is my shepherd; I shall not want.” — Psalm 23:1 (Placeholder: Dynamic content to be added later.)</p>
     </section>
 
     <!-- Feature Highlights -->
     <section class="content-section">
-      <h4 class="section-title" data-i18n="home_features_title">Explore Our Offerings</h4>
+      <h4 class="section-title">Explore Our Offerings</h4>
       <div class="features-grid">
-        <a href="faith.html" class="feature-link" data-i18n="home_feature_faith">Learn Our Faith</a>
-        <a href="qa.html" class="feature-link" data-i18n="home_feature_qa">Ask a Question</a>
-        <a href="resources.html" class="feature-link" data-i18n="home_feature_resources">Access Resources</a>
-        <a href="about.html" class="feature-link" data-i18n="home_feature_about">About Us</a>
+        <a href="faith.html" class="feature-link">Learn Our Faith</a>
+        <a href="qa.html" class="feature-link">Ask a Question</a>
+        <a href="resources.html" class="feature-link">Access Resources</a>
+        <a href="about.html" class="feature-link">About Us</a>
+        <!-- OrthoConnect Features -->
+        <a href="church-finder.html" class="feature-link">Find a Church</a>
+        <a href="events.html" class="feature-link">View Events</a>
+        <a href="social-hub.html" class="feature-link">Connect on Social Media</a>
       </div>
     </section>
 
     <!-- Call to Action -->
     <section class="content-section">
-      <h4 class="section-title" data-i18n="home_cta_title">Join Our Journey</h4>
-      <p class="section-content" data-i18n="home_cta_content">Submit a question, explore teachings, or connect with our community today.</p>
-      <a href="qa.html" class="cta-button" data-i18n="home_cta_button">Get Started</a>
+      <h4 class="section-title">Join Our Journey</h4>
+      <p class="section-content">Submit a question, explore teachings, or connect with our community today.</p>
+      <a href="qa.html" class="cta-button">Get Started</a>
     </section>
   </main>
 
   <footer>
-    <p data-i18n="footer">© 2025 YeYohannes Neseha</p>
+    <p>© 2025 YeYohannes Neseha</p>
   </footer>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'am,en,ti,om,ar,fr',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script src="js/main.js"></script>
 </body>
