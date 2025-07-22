@@ -1,0 +1,36 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Noto Serif', serif;
+  background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
+  color: #3e2f1c;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+header {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid #fff3;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
