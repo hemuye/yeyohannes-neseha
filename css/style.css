@@ -24,6 +24,71 @@ header {
   border-bottom: 2px solid #fff3;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #3e2f1c;
+  font-weight: bold;
+}
+
+.language-toggle button {
+  background: none;
+  border: 2px solid #3e2f1c;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #3e2f1c;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease-in-out;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 /* Hero Section */
 .hero {
   padding: 3rem;
