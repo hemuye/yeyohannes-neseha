@@ -23,13 +23,6 @@ body {
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
 }
 
-@media screen and (max-width: 768px) {
-  .banner {
-    padding: 0.2rem 0; /* CHANGE: Further reduced padding on smaller screens */
-  }
-    
-}
-
 .banner-image-container {
   display: flex;
   justify-content: center;
