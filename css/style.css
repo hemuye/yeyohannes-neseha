@@ -19,8 +19,14 @@ body {
 
 /* Banner Section (Trinity Image Above Navbar) */
 .banner {
-  padding: 0.3rem 0; /* CHANGE: Slightly decreased padding for desktop as requested (from 0.5rem to 0.3rem) */
+  padding: 0rem 0; /* CHANGE: Reduced to 0rem for minimal space above navbar */
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 0rem 0; /* CHANGE: Further reduced to 0rem on smaller screens for tight fit */
+  }
 }
 
 .banner-image-container {
@@ -35,13 +41,10 @@ body {
   opacity: 0.95;
 }
 
+/* CHANGE: Even larger on mobile */
 @media (max-width: 768px) {
-  .banner {
-    padding: 0rem 0; /* CHANGE: Set to 0rem on mobile to eliminate space (fixed media query issue) */
-  }
-
   .banner-image {
-    max-width: 100%; /* CHANGE: Even larger on mobile */
+    max-width: 100%;
   }
 }
 
@@ -49,14 +52,14 @@ body {
 header {
   background-color: rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.1rem 1.5rem; /* CHANGE: Slightly decreased vertical padding for desktop (from 0.2rem to 0.1rem) */
+  padding: 0rem 1rem; /* CHANGE: Reduced to 0rem vertical padding for minimal space below banner */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1rem; /* CHANGE: Adjusted padding for tight fit */
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -109,7 +112,7 @@ header {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 0px; /* CHANGE: Set to 0px to fix mobile positioning and eliminate any residual space */
+    top: 0; /* CHANGE: Adjusted to 0 to align with banner height dynamically */
     left: -100%;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.95);
