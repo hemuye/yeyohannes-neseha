@@ -10,7 +10,7 @@
   "hero_link": "https://linktr.ee/yeyohannesneseha",
   "footer": "© 2025 የዮሐንስ ንስሐ",
   "faith_title": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን እምነት",
-  "faith_content": "የEOTC መምህራት፣ እምነቶች እና ተልዕኮዎች ለመቀመጫ መነሻ መድረክ ነው። ተጨማሪ ይመጣል።",
+  "faith_content": "የEOTC መምህራት፣ እምነቶች እና ተልዕኮዎቹን ለመቀመጫ መነሻ መድረክ ነው። ተጨማሪ ይመጣል።",
   "qa_title": "ጥያቄዎን ይጠይቁ",
   "qa_name_placeholder": "የእርስዎ ስም (አስፈላጊ የለም)",
   "qa_email_placeholder": "የእርስዎ ኢሜል",
@@ -19,5 +19,17 @@
   "resources_title": "መንፈሳዊ መረጃዎች",
   "resources_content": "ለመቀመጫ ጸሎቶች፣ መጽሐፍቅዱሳት እና EOTC ቁርራቶች መነሻ መድረክ ነው። ተጨማሪ ይመጣል።",
   "about_title": "ስለ YeYohannes Neseha",
-  "about_content": "ለመቀመጫ ምልክት፣ ቡድን እና ታሪክ መነሻ መድረክ ነው። ተጨማሪ ዝርዝሮች ይመጣሉ።"
+  "about_content": "ለመቀመጫ ምልክት፣ ቡድን እና ታሪክ መነሻ መድረክ ነው። ተጨማሪ ዝርዝሮች ይመጣሉ።",
+  "home_welcome_title": "እንኳን ወደ YeYohannes Neseha",
+  "home_welcome_content": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ሕብረት ለዓለም አቀፍ መንፈሳዊ መመሪያ፣ ተቀን ማገዝ እና ግንኙነት የምትሰጥ መንፈሳዊ መቃብር።",
+  "home_reflection_title": "የዕለታዊ ማገልገል",
+  "home_reflection_content": "“እግዚአብሔር መምህሩ ነው፥ እኔም አይፈልግም።” — መዝሙረ ዳዊት 23:1 (መነሻ፡ ተግባራዊ ይዘቶች ከዚች ቀን ጀምሮ ይጨምራሉ።)",
+  "home_features_title": "የኛን ምርምሮች ይጎብኙ",
+  "home_feature_faith": "የእምነታችን ይወቁ",
+  "home_feature_qa": "ጥያቄ ይጠይቁ",
+  "home_feature_resources": "መረጃዎችን ያግኙ",
+  "home_feature_about": "ስለ እኛ",
+  "home_cta_title": "ግለጽን እንቀጥል",
+  "home_cta_content": "ጥያቄ ይልኩ፣ መምህራቶችን ይጎብኙ ወይም ከሕብረታችን ጋር ተገናኝ።",
+  "home_cta_button": "መጀመር"
 }
