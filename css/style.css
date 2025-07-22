@@ -19,14 +19,15 @@ body {
 
 /* Banner Section (Trinity Image Above Navbar) */
 .banner {
-  padding: 0rem 0; /* CHANGE: Reduced to 0rem for minimal space above navbar */
+  padding: 0.5rem 0; /* CHANGE: Reduced padding to minimize space above navbar */
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
 }
 
 @media screen and (max-width: 768px) {
   .banner {
-    padding: 0rem 0; /* CHANGE: Further reduced to 0rem on smaller screens for tight fit */
+    padding: 0.2rem 0; /* CHANGE: Further reduced padding on smaller screens */
   }
+    
 }
 
 .banner-image-container {
@@ -52,14 +53,14 @@ body {
 header {
   background-color: rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0rem 1rem; /* CHANGE: Reduced to 0rem vertical padding for minimal space below banner */
+  padding: 0.2rem 1.5rem; /* CHANGE: Reduced padding to minimize space below banner */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem; /* CHANGE: Adjusted padding for tight fit */
+  padding: 0.8rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -112,7 +113,7 @@ header {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 0; /* CHANGE: Adjusted to 0 to align with banner height dynamically */
+    top: 50px;
     left: -100%;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.95);
