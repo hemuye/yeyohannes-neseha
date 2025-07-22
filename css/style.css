@@ -29,11 +29,17 @@ body {
 }
 
 .banner-image {
-  max-width: 80%;
+  /* CHANGE: Removed border and box-shadow completely to blend with gradient background */
+  max-width: 80%; /* Default size for desktop */
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* Glowing effect matching the image */
-  border: 5px solid #ffd700; /* Fallback gold border for the image itself */
+}
+
+/* CHANGE: Make Trinity image larger on mobile for better visibility */
+@media (max-width: 768px) {
+  .banner-image {
+    max-width: 150%; /* Increased size for phones */
+  }
 }
 
 /* Header */
@@ -107,17 +113,14 @@ header {
   }
 }
 
-/* Hero Section (Matching Uploaded Image) */
+/* Hero Section (Matching Uploaded Image, No Borders) */
 .hero {
   padding: 3rem 2rem;
   max-width: 800px;
   margin: 2rem auto;
-  border: 10px solid #ffd700; /* Fallback solid gold border */
-  border-image: url('images/border-pattern.png') 30 round; /* Activates ornate pattern when PNG is added */
-  border-image-slice: 30; /* Adjust based on your PNG */
   background: linear-gradient(180deg, #f8b500 0%, #e86a00 100%);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.3); /* Mimics ornate ridges and glow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.3); /* Subtle glow without borders */
   color: #fff;
 }
 
