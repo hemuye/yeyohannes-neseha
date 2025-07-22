@@ -44,7 +44,7 @@ body {
 @media (max-width: 768px) {
   .banner-image {
     max-width: 100%; /* Already full-width */
-    min-height: 200px; /* CHANGE: Added min-height to make it larger vertically (adjust as needed, e.g., 150px, 250px) */
+    min-height: 150px; /* CHANGE: Added min-height to make it larger vertically (adjust as needed, e.g., 150px, 250px) */
     object-fit: cover; /* Ensures the image scales while maintaining aspect ratio */
   }
 }
