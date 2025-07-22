@@ -23,18 +23,14 @@
 /* Body */
 body {
   font-family: 'Noto Serif', serif;
-  background: linear-gradient(180deg, var(--primary-gold) 0%, var(--primary-orange) 50%, var(--dark-brown) 100%);
-  color: var(--dark-brown);
+  background: linear-gradient(180deg, var(--primary-gold) 0%, var(--primary-orange) 50%, var(--dark-brown) 100%); /* Gold to Orange to Dark Brown */
+  color: var(--dark-brown); /* Default text color */
   text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 16px;
   line-height: 1.6;
-  border: 10px solid transparent; /* Use transparent fallback to avoid dark brown */
-  border-image: url('images/border-pattern.png') 10 round; /* Confirm path; adjust slice if image doesn't repeat well */
-  padding: 10px; /* Prevent content from touching the border */
-  box-sizing: border-box;
 }
 
 /* --- Animations --- */
