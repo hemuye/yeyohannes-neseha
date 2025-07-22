@@ -7,10 +7,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
 
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('nav-links').classList.toggle('show');
-});
-
 // Language toggle state
 let currentLang = localStorage.getItem('language') || 'en';
 
@@ -21,7 +17,6 @@ async function loadLanguage(lang) {
     if (!response.ok) throw new Error('Language file not found');
     const translations = await response.json();
     
-    // Update all elements with data-i18n attributes
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       if (translations[key]) {
@@ -29,10 +24,7 @@ async function loadLanguage(lang) {
       }
     });
 
-    // Update button text based on current language
     toggleLangButton.textContent = lang === 'en' ? 'EN | አማ' : 'አማ | EN';
-
-    // Save language preference
     localStorage.setItem('language', lang);
     currentLang = lang;
   } catch (error) {
@@ -40,11 +32,27 @@ async function loadLanguage(lang) {
   }
 }
 
-// Toggle language on button click
 toggleLangButton.addEventListener('click', () => {
   const newLang = currentLang === 'en' ? 'am' : 'en';
   loadLanguage(newLang);
 });
 
-// Load initial language
 loadLanguage(currentLang);
+
+// Q&A Form Handling (Temporary Console Log)
+const qaForm = document.getElementById('qa-form');
+const qaMessage = document.getElementById('qa-message');
+
+if (qaForm) {
+  qaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(qaForm);
+    const data = Object.fromEntries(formData);
+    console.log('Form submitted:', data);
+    qaMessage.textContent = 'Thank you! Your question has been received.';
+    qaForm.reset();
+    setTimeout(() => {
+      qaMessage.textContent = '';
+    }, 3000);
+  });
+}

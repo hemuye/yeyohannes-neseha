@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="YeYohannes Neseha - Ask and Receive Spiritual Guidance" />
+  <title>YeYohannes Neseha - Q&A</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Banner Section: Holy Trinity Image Above Navbar -->
+  <section class="banner">
+    <div class="banner-image-container">
+      <img src="images/trinity.png" alt="Holy Trinity Icon" class="banner-image">
+    </div>
+  </section>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo" data-i18n="logo">የዮሐንስ ንስሐ</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="faith.html" data-i18n="nav_faith">Our Faith</a></li>
+        <li><a href="qa.html" data-i18n="nav_qa">Q&A</a></li>
+        <li><a href="resources.html" data-i18n="nav_resources">Resources</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+      </ul>
+      <div class="language-toggle">
+        <button id="toggle-lang">EN | አማ</button>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h3 class="hero-title" data-i18n="qa_title">Ask Your Questions</h3>
+      <form class="qa-form" id="qa-form">
+        <input type="text" name="name" placeholder="Your Name (Optional)" data-i18n="qa_name_placeholder" />
+        <input type="email" name="email" placeholder="Your Email" data-i18n="qa_email_placeholder" required />
+        <textarea name="question" placeholder="Your Question" data-i18n="qa_question_placeholder" required></textarea>
+        <button type="submit" data-i18n="qa_submit">Submit</button>
+      </form>
+      <p class="qa-message" id="qa-message"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">© 2025 YeYohannes Neseha</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

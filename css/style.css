@@ -169,6 +169,54 @@ header {
   font-weight: bold;
 }
 
+/* Q&A Form Styling */
+.qa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.qa-form input,
+.qa-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #2a1b0e;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #2a1b0e;
+  font-family: 'Noto Serif', serif;
+}
+
+.qa-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.qa-form button {
+  padding: 0.5rem 1rem;
+  background: #ffd700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #2a1b0e;
+  transition: background 0.3s ease;
+}
+
+.qa-form button:hover {
+  background: #e6c200;
+}
+
+.qa-message {
+  margin-top: 1rem;
+  color: #fff;
+  font-style: italic;
+}
+
 /* Footer */
 footer {
   padding: 0.8rem;
