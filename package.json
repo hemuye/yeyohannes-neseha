@@ -9,7 +9,7 @@
     "clean": "rm -rf public"
   },
   "dependencies": {
-    "hugo-bin": "^0.134.2"
+    "hugo-bin": "^0.112.5"
   },
   "author": "Ye Yohannes Neseha Team",
   "license": "MIT"
