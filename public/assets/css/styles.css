@@ -451,6 +451,7 @@ body.dark #translate-icon:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1001;
+  display: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -517,7 +518,6 @@ body.dark .dark-mode-toggle-button {
     background: rgba(255, 140, 0, 0.1);
     border: none;
     box-shadow: none;
-    padding: 0.5rem;
   }
 
   body.dark #google_translate_element {
