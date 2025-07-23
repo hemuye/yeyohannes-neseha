@@ -104,24 +104,42 @@ if (dropdowns) {
   });
 }
 
-// Language toggle button to show/hide Google Translate dropdown
-if (languageToggle && languageMenu) {
-  languageToggle.addEventListener('click', (e) => {
+// Google Translate Initialization: Sets up the translation widget
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'am,en,ti,om,ar,fr',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+// Google Translate Toggle: Handles language dropdown visibility
+if (document.getElementById('language-toggle') && document.getElementById('google_translate_element')) {
+  document.getElementById('language-toggle').addEventListener('click', (e) => {
     e.stopPropagation();
-    languageMenu.classList.toggle('show');
-    console.log('[LanguageToggle] Language menu toggled');
+    document.getElementById('google_translate_element').classList.toggle('show');
+    console.log('Language toggle clicked, dropdown visibility:', document.getElementById('google_translate_element').classList.contains('show') ? 'visible' : 'hidden');
   });
 
-  // Close Google Translate dropdown if clicking outside
+  // Close dropdown when clicking outside
   document.addEventListener('click', (e) => {
-    if (!languageMenu.contains(e.target) && !languageToggle.contains(e.target)) {
-      if (languageMenu.classList.contains('show')) {
-        languageMenu.classList.remove('show');
-        console.log('[Document] Click outside language menu - language menu closed');
-      }
+    if (!document.getElementById('google_translate_element').contains(e.target) && !document.getElementById('language-toggle').contains(e.target)) {
+      document.getElementById('google_translate_element').classList.remove('show');
+      console.log('Clicked outside, dropdown hidden');
     }
   });
 }
+
+// Initialize on DOM Load: Ensures Google Translate dropdown is hidden
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('google_translate_element')) {
+    document.getElementById('google_translate_element').classList.remove('show');
+  }
+  if (document.getElementById('language-toggle')) {
+    console.log('Language toggle button loaded, visibility:', window.getComputedStyle(document.getElementById('language-toggle')).display);
+  }
+});
 
 // Search button click handler (simple alert placeholder)
 const searchButton = document.querySelector('.search-button');
