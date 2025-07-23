@@ -1,4 +1,7 @@
+// main.js
+
 // Initialize Google Translate widget
+// This function is called by the Google Translate script when it loads.
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en', // Default page language
@@ -12,13 +15,13 @@ function googleTranslateElementInit() {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 const overlay = document.getElementById('overlay');
-const languageToggle = document.getElementById('translate-icon');
-const languageMenu = document.getElementById('google_translate_element');
-const dropdowns = document.querySelectorAll('.dropdown');
+const languageToggle = document.getElementById('translate-icon'); // Correct ID for the button
+const languageMenu = document.getElementById('google_translate_element'); // Correct ID for the Google Translate container
+const dropdowns = document.querySelectorAll('.dropdown'); // For main navigation dropdowns
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
-// Dark Mode Toggle with localStorage persistence and throttling
+// --- Dark Mode Toggle with localStorage persistence and throttling ---
 if (darkModeToggle) {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
@@ -30,12 +33,13 @@ if (darkModeToggle) {
   }
 
   let lastToggleTime = 0;
+  const THROTTLE_DELAY = 300; // milliseconds
 
   darkModeToggle.addEventListener('click', () => {
     const now = Date.now();
-    if (now - lastToggleTime < 300) {
+    if (now - lastToggleTime < THROTTLE_DELAY) {
       console.log('[DarkMode] Toggle ignored to prevent rapid toggling');
-      return; // Prevent toggling too fast
+      return;
     }
     lastToggleTime = now;
 
@@ -45,19 +49,19 @@ if (darkModeToggle) {
   });
 }
 
-// Hamburger Menu Toggle for mobile
+// --- Hamburger Menu Toggle for mobile ---
 if (hamburger && navLinks && overlay) {
   hamburger.addEventListener('click', (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevent click from propagating to document listener
     const isOpen = navLinks.classList.toggle('show');
     overlay.classList.toggle('show', isOpen);
     hamburger.classList.toggle('active', isOpen);
     console.log(`[Hamburger] Menu toggled, isOpen: ${isOpen}`);
 
-    // Close all dropdown submenus on hamburger toggle
+    // Close all main navigation dropdown submenus on hamburger toggle
     dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
 
-    // Close language menu if open
+    // Close language menu if open (when hamburger menu is opened/closed)
     if (languageMenu) {
       languageMenu.classList.remove('show');
       console.log('[Hamburger] Language menu closed');
@@ -71,18 +75,19 @@ if (hamburger && navLinks && overlay) {
     hamburger.classList.remove('active');
     dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
     if (languageMenu) {
-      languageMenu.classList.remove('show');
+      languageMenu.classList.remove('show'); // Close language menu on overlay click
     }
     console.log('[Overlay] Clicked overlay - all menus closed');
   });
 }
 
-// Dropdown submenu toggle on mobile only
-if (dropdowns) {
+// --- Dropdown submenu toggle on mobile only (for main navigation links) ---
+if (dropdowns.length > 0) { // Check if dropdowns exist
   dropdowns.forEach(dropdown => {
-    const link = dropdown.querySelector('a');
+    const link = dropdown.querySelector('a'); // Assuming the main link itself acts as a toggle
     if (link) {
       link.addEventListener('click', (e) => {
+        // This logic should only apply on mobile widths
         if (window.innerWidth <= 768) {
           e.preventDefault(); // Prevent link navigation on mobile dropdown toggle
           const isActive = dropdown.classList.toggle('active');
@@ -93,7 +98,7 @@ if (dropdowns) {
             if (other !== dropdown) other.classList.remove('active');
           });
 
-          // Close language menu if open
+          // Close language menu if open when a main nav dropdown is toggled
           if (languageMenu) {
             languageMenu.classList.remove('show');
             console.log('[Dropdown] Language menu closed');
@@ -104,44 +109,48 @@ if (dropdowns) {
   });
 }
 
-// Google Translate Initialization: Sets up the translation widget
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'am,en,ti,om,ar,fr',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
-}
+// --- Google Translate Toggle: Handles language dropdown visibility ---
+// IMPORTANT FIX: Using the correct 'languageToggle' constant (for #translate-icon)
+if (languageToggle && languageMenu) {
+  languageToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the click from immediately closing the menu via the document listener
+    languageMenu.classList.toggle('show');
+    console.log('Language toggle clicked, dropdown visibility:', languageMenu.classList.contains('show') ? 'visible' : 'hidden');
 
-// Google Translate Toggle: Handles language dropdown visibility
-if (document.getElementById('language-toggle') && document.getElementById('google_translate_element')) {
-  document.getElementById('language-toggle').addEventListener('click', (e) => {
-    e.stopPropagation();
-    document.getElementById('google_translate_element').classList.toggle('show');
-    console.log('Language toggle clicked, dropdown visibility:', document.getElementById('google_translate_element').classList.contains('show') ? 'visible' : 'hidden');
+    // Close main nav dropdowns if language menu opens (optional, but good for UX)
+    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    if (navLinks && navLinks.classList.contains('show')) {
+        // If the mobile nav is open, ensure the language menu is contained within it visually.
+        // Or if you want language toggle to close mobile nav, uncomment below:
+        // navLinks.classList.remove('show');
+        // overlay.classList.remove('show');
+        // hamburger.classList.remove('active');
+    }
   });
 
-  // Close dropdown when clicking outside
+  // Close language dropdown when clicking outside of it or the toggle button
   document.addEventListener('click', (e) => {
-    if (!document.getElementById('google_translate_element').contains(e.target) && !document.getElementById('language-toggle').contains(e.target)) {
-      document.getElementById('google_translate_element').classList.remove('show');
-      console.log('Clicked outside, dropdown hidden');
+    // Check if the click target is NOT inside the language menu AND NOT the language toggle button itself
+    if (!languageMenu.contains(e.target) && !languageToggle.contains(e.target)) {
+      languageMenu.classList.remove('show');
+      console.log('Clicked outside language menu, dropdown hidden');
     }
   });
 }
 
-// Initialize on DOM Load: Ensures Google Translate dropdown is hidden
+// --- Initialize on DOM Load: Ensures Google Translate dropdown is hidden ---
+// Also logs initial theme state for debugging.
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('google_translate_element')) {
-    document.getElementById('google_translate_element').classList.remove('show');
+  if (languageMenu) {
+    languageMenu.classList.remove('show'); // Ensure it's hidden on load
   }
-  if (document.getElementById('language-toggle')) {
-    console.log('Language toggle button loaded, visibility:', window.getComputedStyle(document.getElementById('language-toggle')).display);
+  if (languageToggle) { // Check if the button exists
+    console.log('Language toggle button loaded, visibility:', window.getComputedStyle(languageToggle).display);
   }
+  console.log(`[DOMContentLoaded] Initial theme: ${body.classList.contains('dark') ? 'dark' : 'light'}`);
 });
 
-// Search button click handler (simple alert placeholder)
+// --- Search button click handler (simple alert placeholder) ---
 const searchButton = document.querySelector('.search-button');
 if (searchButton) {
   searchButton.addEventListener('click', () => {
@@ -153,38 +162,33 @@ if (searchButton) {
   });
 }
 
-// On DOM load: ensure language menu hidden and log theme state
-document.addEventListener('DOMContentLoaded', () => {
-  if (languageMenu) {
-    languageMenu.classList.remove('show');
-  }
-  console.log(`[DOMContentLoaded] Initial theme: ${body.classList.contains('dark') ? 'dark' : 'light'}`);
-});
-
-// On window resize: reset menus and toggles when switching between mobile/desktop
+// --- On window resize: reset menus and toggles when switching between mobile/desktop ---
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 768) { // Assuming 768px is your mobile breakpoint
+    // Close mobile-specific UI elements
     if (navLinks) navLinks.classList.remove('show');
     if (hamburger) hamburger.classList.remove('active');
     if (overlay) overlay.classList.remove('show');
-    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
-    if (languageMenu) languageMenu.classList.remove('show');
-    console.log('[Resize] Window resized above 768px - menus reset');
+    dropdowns.forEach(dropdown => dropdown.classList.remove('active')); // Close main nav dropdowns
+    if (languageMenu) languageMenu.classList.remove('show'); // Close language menu
+    console.log('[Resize] Window resized above 768px - mobile menus reset');
   }
 });
 
-// ESC key press to close menus and overlays
+// --- ESC key press to close menus and overlays ---
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    if (navLinks.classList.contains('show')) {
-      navLinks.classList.remove('show');
-      hamburger.classList.remove('active');
-      overlay.classList.remove('show');
-      dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
-      if (languageMenu) {
-        languageMenu.classList.remove('show');
-      }
-      console.log('[Escape] Escape pressed - all menus closed');
+    // Check if any of the major UI elements are open
+    const isMobileNavOpen = navLinks && navLinks.classList.contains('show');
+    const isLanguageMenuOpen = languageMenu && languageMenu.classList.contains('show');
+
+    if (isMobileNavOpen || isLanguageMenuOpen) {
+      if (navLinks) navLinks.classList.remove('show');
+      if (hamburger) hamburger.classList.remove('active');
+      if (overlay) overlay.classList.remove('show');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('active')); // Close main nav dropdowns
+      if (languageMenu) languageMenu.classList.remove('show'); // Close language menu
+      console.log('[Escape] Escape pressed - all visible menus closed');
     }
   }
 });
