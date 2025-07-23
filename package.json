@@ -1,0 +1,16 @@
+{
+  "name": "yeyohannes-neseha",
+  "version": "1.0.0",
+  "description": "Ye Yohannes Neseha - EOTC Digital Sanctuary",
+  "private": true,
+  "scripts": {
+    "start": "hugo server --disableFastRender",
+    "build": "hugo --minify",
+    "clean": "rm -rf public"
+  },
+  "dependencies": {
+    "hugo-bin": "^0.134.2"
+  },
+  "author": "Ye Yohannes Neseha Team",
+  "license": "MIT"
+}
