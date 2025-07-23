@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ye Yohannes Neseha (John's Repentance) - The biggest digital resource center for the Ethiopian Orthodox Tewahedo Church, offering comprehensive spiritual guidance, theological insights, historical archives, and community resources." />
+  <title>Ye Yohannes Neseha - EOTC Digital Sanctuary</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <section class="banner">
+    <div class="banner-image-container">
+      <img src="assets/images/common/trinity.png" alt="Holy Trinity Icon - Ethiopian Orthodox Tewahedo Church" class="banner-image">
+    </div>
+  </section>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">የዮሐንስ ንስሐ</a>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="#">Spiritual Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/spiritual-life/faith-creed/index.html">Faith & Creed</a></li>
+            <li><a href="content/spiritual-life/sacraments/index.html">Sacraments</a></li>
+            <li><a href="content/spiritual-life/fasting/index.html">Fasting</a></li>
+            <li><a href="content/spiritual-life/prayers/index.html">Prayers</a></li>
+            <li><a href="content/spiritual-life/neseha/index.html">Neseha</a></li>
+            <li><a href="content/spiritual-life/holy-liturgy/index.html">Holy Liturgy</a></li>
+            <li><a href="content/spiritual-life/family-life/index.html">Family Life</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">Theology</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/theology-dogma/index.html">Overview</a></li>
+            <li><a href="content/theology-dogma/christology/index.html">Christology</a></li>
+            <li><a href="content/theology-dogma/mariology/index.html">Mariology</a></li>
+            <li><a href="content/theology-dogma/eschatology/index.html">Eschatology</a></li>
+            <li><a href="content/theology-dogma/patristics/index.html">Patristics</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">Resources</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/resource-library/saints-database/index.html">Saints Database</a></li>
+            <li><a href="content/resource-library/writings/index.html">Writings</a></li>
+            <li><a href="content/resource-library/audio-video-archive/index.html">Audio/Video</a></li>
+            <li><a href="content/resource-library/church-documents/index.html">Church Documents</a></li>
+            <li><a href="content/resource-library/pdfs/index.html">PDFs</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">History</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/history/index.html">Overview</a></li>
+            <li><a href="content/history/christianity-in-ethiopia/index.html">Christianity in Ethiopia</a></li>
+            <li><a href="content/history/axumite-period.html">Axumite Period</a></li>
+            <li><a href="content/history/modern-history.html">Modern History</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">Culture</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/culture-heritage/index.html">Overview</a></li>
+            <li><a href="content/culture-heritage/iconography/index.html">Iconography</a></li>
+            <li><a href="content/culture-heritage/church-architecture/index.html">Architecture</a></li>
+            <li><a href="content/culture-heritage/ge-ez-language/index.html">Ge'ez Language</a></li>
+            <li><a href="content/culture-heritage/cuisine-fasting-feasting/index.html">Cuisine</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">Education</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/education-formation/index.html">Overview</a></li>
+            <li><a href="content/education-formation/theological-studies/index.html">Theological Studies</a></li>
+            <li><a href="content/education-formation/sunday-school-curriculum/index.html">Sunday School</a></li>
+            <li><a href="content/education-formation/catechism-for-converts/index.html">Catechism</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#">Community</a>
+          <ul class="dropdown-menu">
+            <li><a href="content/community-service/deacons-corner/index.html">Deacons' Corner</a></li>
+            <li><a href="content/community-service/priests-corner/index.html">Priests' Corner</a></li>
+            <li><a href="content/community-service/charitable-outreach/index.html">Charitable Outreach</a></li>
+            <li><a href="content/community-service/diaspora-churches/index.html">Diaspora Churches</a></li>
+          </ul>
+        </li>
+        <li><a href="content/news-events/index.html">News & Events</a></li>
+        <li><a href="content/about-eotc/index.html">About</a></li>
+        <li><a href="content/about-eotc/contact.html">Contact</a></li>
+        <li class="dropdown language-toggle-li">
+        <button id="translate-icon" title="Translate">
+          <i class="fas fa-globe"></i>
+          </button>
+          <div id="google_translate_element" class="dropdown-menu"></div>
+      </li>
+        <li>
+          <button id="dark-mode-toggle" class="dark-mode-toggle-button" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <main>
+    <section class="hero repentance-hero">
+      <h1 class="hero-title amharic-text">“ንስሐ ግቡ፥ መንግሥተ ሰማያት ቀርባለችና!”</h1>
+      <p class="hero-subtitle">— Matthew 3:1-2 (John the Baptist)</p>
+      <p class="hero-content">Welcome to <strong>Ye Yohannes Neseha</strong>, the comprehensive digital sanctuary for the Ethiopian Orthodox Tewahedo Church. Explore the profound spiritual guidance, rich theological insights, ancient history, vibrant culture, and dedicated community resources of our beloved Church.</p>
+      <div class="cta-buttons-group">
+        <a href="content/spiritual-life/faith-creed/index.html" class="cta-button primary">Explore Our Faith</a>
+        <a href="content/spiritual-life/neseha/index.html" class="cta-button secondary">Journey of Repentance</a>
+      </div>
+    </section>
+
+    <section class="content-section spiritual-questions dynamic-content-section">
+      <h2 class="section-title">Featured Insights & Resources</h2>
+      <div class="section-content-wrapper">
+        <div class="question-card">
+          <h3>Understanding the Holy Trinity in EOTC</h3>
+          <img src="https://placehold.co/600x400/A7C7E7/000000?text=Trinity+Study" alt="Holy Trinity Icon" class="section-image mb-4">
+          <p>Delve into the foundational doctrine of the Holy Trinity as understood and taught by the Ethiopian Orthodox Tewahedo Church.</p>
+          <div class="link-group">
+            <a href="content/spiritual-life/faith-creed/holy-trinity/index.html" class="feature-link">Read More</a>
+          </div>
+        </div>
+        <div class="question-card">
+          <h3>The Life and Miracles of St. Mary</h3>
+          <img src="assets/images/spiritual-life/st-mary.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E7A7C7/000000?text=St+Mary';" alt="St. Mary Icon" class="section-image mb-4">
+          <p>Explore the venerated life and countless miracles of the Holy Virgin Mary, the Theotokos, in Orthodox tradition.</p>
+          <div class="link-group">
+            <a href="content/resource-library/saints-database/st-mary/index.html" class="feature-link">Learn More</a>
+          </div>
+        </div>
+        <div class="question-card">
+          <h3>Upcoming Major Feast: Meskel (Finding of the True Cross)</h3>
+          <img src="https://placehold.co/600x400/C7E7A7/000000?text=Meskel+Celebration" alt="Meskel Celebration" class="section-image mb-4">
+          <p>Learn about the vibrant traditions and spiritual significance of Meskel, one of the greatest feasts in the EOTC calendar.</p>
+          <div class="link-group">
+            <a href="content/news-events/upcoming-events/index.html" class="feature-link">View Events Calendar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section father-repentance dynamic-content-section">
+      <h2 class="section-title">Connect with a Confession Father</h2>
+      <div class="section-content-wrapper reverse-layout">
+        <div class="section-image-container">
+          <img src="assets/images/spiritual-life/father-confession.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A7C7E7/000000?text=Confession+Father';" alt="Priest offering guidance" class="section-image">
+        </div>
+        <div class="section-text-content">
+          <p class="section-content">For personal spiritual counsel and the Sacrament of Neseha, connect with a penitent father. This sacred encounter offers guidance, forgiveness, and profound spiritual renewal according to the teachings of the Church.</p>
+          <div class="link-group">
+            <a href="content/community-service/father-confession-finder/index.html" class="cta-button primary">Find a Confession Father</a>
+            <a href="content/spiritual-life/neseha/how-to-confess.html" class="cta-button secondary">How to Prepare for Neseha</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section baptism-service dynamic-content-section">
+      <h2 class="section-title">Holy Baptism: Entry into the Church</h2>
+      <div class="section-content-wrapper">
+        <div class="section-image-container">
+          <img src="assets/images/spiritual-life/baptism.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E7A7C7/000000?text=Baptism+Ceremony';" alt="Baptism ceremony" class="section-image">
+        </div>
+        <div class="section-text-content">
+          <p class="section-content">The Sacrament of Holy Baptism is the foundational step for entering into the Christian life within the Ethiopian Orthodox Tewahedo Church. We provide comprehensive guidance for catechumens and those interested in joining our faith.</p>
+          <p class="section-quote">“Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit” <br>— Matthew 28:19</p>
+          <a href="content/spiritual-life/sacraments/baptism/index.html" class="cta-button primary">Learn About Holy Baptism</a>
+        </div>
+      </div>
+      <div class="baptism-form-container">
+        <h3 class="section-title">Inquire About Joining the Church</h3>
+        <form class="baptism-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Tell us about your spiritual journey and your desire for baptism." required></textarea>
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="content-section deacons-corner dynamic-content-section">
+      <h2 class="section-title">Deacons' Corner: Resources for Service</h2>
+      <p class="section-subtitle">Deacons serve as vital pillars in the Church, assisting clergy and guiding the faithful in liturgical and spiritual life.</p>
+      <div class="section-content-wrapper reverse-layout">
+        <div class="section-image-container">
+          <img src="assets/images/community-service/deacon-corner.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C7E7A7/000000?text=Deacon+Serving';" alt="Deacon reading scripture" class="section-image">
+        </div>
+        <div class="section-text-content">
+          <div class="deacons-grid">
+            <div class="deacons-card">
+              <h3>Daily Liturgical Readings</h3>
+              <table class="readings-table">
+                <thead>
+                  <tr><th>Type</th><th>Scripture</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Morning</td><td>Psalm 65:10</td></tr>
+                  <tr><td>Evening</td><td>Ephesians 7:10-12</td></tr>
+                  <tr><td>Liturgical</td><td>1 Peter 4:4-12</td></tr>
+                  <tr><td>Acts</td><td>Acts 15:1-4</td></tr>
+                </tbody>
+              </table>
+              <p class="source">Updated daily according to the EOTC liturgical calendar.</p>
+            </div>
+            <div class="deacons-card">
+              <h3>Holy Kidase: Understanding the Liturgy</h3>
+              <p>Delve deeper into the chants, prayers, and profound meaning of the Ethiopian Orthodox Tewahedo Church liturgy. Resources for deacons and the faithful.</p>
+              <div class="link-group">
+                <a href="content/spiritual-life/holy-liturgy/index.html" class="feature-link">Explore Holy Liturgy</a>
+              </div>
+            </div>
+            <div class="deacons-card">
+              <h3>Gibre Diquna: Deacon's Duties</h3>
+              <ul>
+                <li>Assisting in Sacraments</li>
+                <li>Liturgical Chants & Responses</li>
+                <li>Scripture Readings</li>
+                <li>Maintaining Church Order</li>
+              </ul>
+              <p class="source">Essential duties as guided by EOTC liturgical traditions.</p>
+              <div class="link-group">
+                <a href="content/community-service/deacons-corner/liturgical-duties.html" class="feature-link">Learn More About Deacon Duties</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section features">
+      <h2 class="section-title">Explore the Full Ethiopian Orthodox Tewahedo Church Digital Sanctuary</h2>
+      <div class="features-grid">
+        <a href="content/spiritual-life/index.html" class="feature-card">Spiritual Life</a>
+        <a href="content/theology-dogma/index.html" class="feature-card">Theology & Dogma</a>
+        <a href="content/monastic-life/index.html" class="feature-card">Monastic Life</a>
+        <a href="content/resource-library/index.html" class="feature-card">Resource Library</a>
+        <a href="content/history/index.html" class="feature-card">Church History</a>
+        <a href="content/culture-heritage/index.html" class="feature-card">Culture & Heritage</a>
+        <a href="content/education-formation/index.html" class="feature-card">Education & Formation</a>
+        <a href="content/community-service/index.html" class="feature-card">Community & Service</a>
+        <a href="content/church-governance/index.html" class="feature-card">Church Governance</a>
+        <a href="content/news-events/index.html" class="feature-card">News & Events</a>
+        <a href="content/about-eotc/index.html" class="feature-card">About the EOTC</a>
+        <a href="content/spiritual-life/neseha/index.html" class="feature-card">Ye Yohannes Neseha (Repentance)</a>
+      </div>
+    </section>
+
+    <section class="content-section cta">
+      <h2 class="section-title">Deepen Your Faith in the Ethiopian Orthodox Tewahedo Church</h2>
+      <p class="section-content">Embark on a comprehensive spiritual journey. Explore the rich traditions, profound teachings, and vibrant community that define the Ethiopian Orthodox Tewahedo Church.</p>
+      <a href="content/spiritual-life/faith-creed/index.html" class="cta-button primary">Begin Your Spiritual Journey</a>
+    </section>
+  </main>
+
+  <footer>
+    <p class="amharic-text">© 2025 የዮሐንስ ንስሐ. ሁሉም መብቶች የተጠበቁ ናቸው።</p>
+    <p>© 2025 Ye Yohannes Neseha. All rights reserved.</p>
+    <div class="link-group">
+      <a href="content/about-eotc/privacy-policy.html">Privacy Policy</a>
+      <a href="content/about-eotc/terms-of-service.html">Terms of Service</a>
+      <a href="content/about-eotc/sitemap.html">Sitemap</a>
+    </div>
+    <p class="source">Inspired by the Holy Spirit and dedicated to the glory of God.</p>
+    <p class="source">Phone: <a href="tel:+251920193144">0920-19-31-44</a> | Email: <a href="mailto:yohannes.neseha@gmail.com">yohannes.neseha@gmail.com</a></p>
+    <div class="search-container">
+      <input type="text" placeholder="Search the site..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
