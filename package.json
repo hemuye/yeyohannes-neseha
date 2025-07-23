@@ -9,11 +9,7 @@
     "clean": "rm -rf public"
   },
   "dependencies": {
-     "hugo-bin": "^0.112.4"
-},
-  "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "vercel": "^37.4.2"
+    "hugo-bin": "^0.145.1"
   },
   "author": "Ye Yohannes Neseha Team",
   "license": "MIT"
